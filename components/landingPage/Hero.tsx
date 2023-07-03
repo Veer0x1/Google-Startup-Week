@@ -10,7 +10,7 @@ interface OwnProps {}
 
 type Props = OwnProps;
 
-const Hero: FunctionComponent<Props> = (props) => {
+const Hero: FunctionComponent<Props> = () => {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
@@ -32,9 +32,9 @@ const Hero: FunctionComponent<Props> = (props) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
         </a>
