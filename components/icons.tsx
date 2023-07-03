@@ -1,5 +1,6 @@
 import {
   AlertTriangle,
+  Ticket,
   ArrowRight,
   Check,
   ChevronLeft,
@@ -34,6 +35,7 @@ import {
 export type Icon = LucideIcon;
 
 export const Icons = {
+  ticket: Ticket,
   phone: Phone,
   mail: Mail,
   check: Check,
