@@ -20,7 +20,7 @@ type Props = OwnProps;
 export const NavbarAction: FunctionComponent<Props> = (props) => {
   return (
     <>
-      <Link href={"/login"}>
+      <Link href={"/pricing"}>
         <Button variant={"default"} size={"sm"} className={"mr-4 px-4"}>
           Get Ticket
         </Button>

@@ -5,6 +5,7 @@ import Google from "@/public/assets/GoogleForStartups_Horizontal (1) (1).png";
 import gd from "@/public/assets/GD_REGISTRY_POWERED_BY_LOCKUP_3_CMYK_COLOR (2) (1).png";
 import brex from "@/public/assets/Brex Black _ White Logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 interface OwnProps {}
 
@@ -45,10 +46,13 @@ const Hero: FunctionComponent<Props> = () => {
           AUGUST 7-9, 2023, IIT BHU Varanasi
         </p>
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+          <Link href={"/pricing"}>
           <Button size={"lg"}>
             <Icons.ticket className={"h-4 w-4 mr-2"} />
             Get Ticket
           </Button>
+          </Link>
+
         </div>
         <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
           <span className="font-semibold text-gray-400 uppercase">
