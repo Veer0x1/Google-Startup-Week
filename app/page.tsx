@@ -1,3 +1,4 @@
+
 import Hero from "@/components/landingPage/Hero";
 import WhyStartupWeekend from "@/components/landingPage/WhyStartupWeekend";
 import {Mentor} from "@/components/landingPage/Mentor";

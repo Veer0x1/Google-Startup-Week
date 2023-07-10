@@ -1,17 +1,32 @@
+'use client'
+
 import React, { FunctionComponent } from "react";
 import { Icons } from "../icons";
 import { Button } from "@/components/ui/button";
-import Google from "@/public/assets/GoogleForStartups_Horizontal (1) (1).png";
-import gd from "@/public/assets/GD_REGISTRY_POWERED_BY_LOCKUP_3_CMYK_COLOR (2) (1).png";
-import brex from "@/public/assets/Brex Black _ White Logo.png";
+// import Google from "@/public/assets/GoogleForStartups_Horizontal (1) (1).png";
+// import gd from "@/public/assets/GD_REGISTRY_POWERED_BY_LOCKUP_3_CMYK_COLOR (2) (1).png";
+// import brex from "@/public/assets/Brex Black _ White Logo.png";
 import Image from "next/image";
 import Link from "next/link";
+//@ts-ignore
+
+import { signIn, signOut } from "next-auth/react"
+
 
 interface OwnProps {}
 
 type Props = OwnProps;
 
 const Hero: FunctionComponent<Props> = () => {
+  //@ts-ignore
+  const signIn: MouseEventHandler<HTMLDivElement> = (event) => {
+    // Your sign-in logic here
+    console.log("Sign-in clicked!");
+
+    // For example, you can use NextAuth.js to initiate the sign-in process
+    // by calling the signIn() function from the 'next-auth/client' package
+    signIn(); // Replace this with your actual sign-in function call
+  };
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
@@ -39,7 +54,7 @@ const Hero: FunctionComponent<Props> = () => {
             ></path>
           </svg>
         </a>
-        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        <h1  className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           Innovator to entrepreneur
         </h1>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
@@ -52,6 +67,7 @@ const Hero: FunctionComponent<Props> = () => {
             Get Ticket
           </Button>
           </Link>
+          <button onClick={()=>signIn("Google")}>Sign in</button>
 
         </div>
         <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
@@ -63,31 +79,31 @@ const Hero: FunctionComponent<Props> = () => {
               href="#"
               className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
             >
-              <Image src={Google} alt={"Google"} height={200} width={200} />
+              {/*<Image src={Google} alt={"Google"} height={200} width={200} />*/}
             </a>
             <a
               href="#"
               className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
             >
-              <Image
-                src={gd}
-                alt={"GD"}
-                height={200}
-                width={200}
-                className={"p-4"}
-              />
+              {/*<Image*/}
+              {/*  src={gd}*/}
+              {/*  alt={"GD"}*/}
+              {/*  height={200}*/}
+              {/*  width={200}*/}
+              {/*  className={"p-4"}*/}
+              {/*/>*/}
             </a>
             <a
               href="#"
               className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
             >
-              <Image
-                src={brex}
-                alt={"Brex"}
-                height={200}
-                width={200}
-                className={"p-4"}
-              />
+              {/*<Image*/}
+              {/*  src={brex}*/}
+              {/*  alt={"Brex"}*/}
+              {/*  height={200}*/}
+              {/*  width={200}*/}
+              {/*  className={"p-4"}*/}
+              {/*/>*/}
             </a>
           </div>
         </div>
