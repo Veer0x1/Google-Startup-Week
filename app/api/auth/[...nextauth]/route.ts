@@ -1,8 +1,16 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { base } from "next/dist/build/webpack/config/blocks/base";
+import { FirestoreAdapter } from "@next-auth/firebase-adapter"
+import { cert } from "firebase-admin/app"
 
 const options: NextAuthOptions = {
+  adapter: FirestoreAdapter({
+    credential: cert({
+      projectId: process.env.PROJECT_ID,
+      clientEmail: process.env.CLIENT_EMAIL,
+      privateKey: process.env.PRIVATE_KEY,
+    })
+  }),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
