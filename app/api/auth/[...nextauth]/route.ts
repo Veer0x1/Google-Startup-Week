@@ -1,77 +1,34 @@
-import * as process from "process"
-import {db} from "@/lib/firebaseStore"
-import { FirestoreAdapter } from "@next-auth/firebase-adapter"
-import { cert } from "firebase-admin/app"
+import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import {
-    addDoc,
-    collection,
-    doc,
-    getDocs,
-    query,
-    updateDoc,
-    where,
-} from "firebase/firestore"
-import { NextAuthOptions } from "next-auth"
-import NextAuth from "next-auth";
-export const authOptions: NextAuthOptions = {
-    // adapter: FirestoreAdapter({
-    //     credential: cert({
-    //         projectId: process.env.PROJECT_ID,
-    //         clientEmail: process.env.CLIENT_EMAIL,
-    //         privateKey: process.env.PRIVATE_KEY,
-    //     }),
-    // }),
+import { base } from "next/dist/build/webpack/config/blocks/base";
 
-    providers: [
-        GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID||"",
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET||""
-        })
-    ],pages: {
-        signIn: '/auth/signin',
-    },
-        callbacks: {
+const options: NextAuthOptions = {
+  providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    }),
+  ],
 
-        jwt: async function ({ token, user }) {
-            // const querySnapshot = await getDocs(
-            //     query(collection(db, "users"), where("email", "==", token.email))
-            // )
-            // const dbUser = querySnapshot.docs[0]
-            // // checking if the user is already present in the database
-            // // if not present then we will add the user to the database
-            // if (!dbUser.exists()) {
-            //     addDoc(collection(db, "users"), {
-            //         id: user.id,
-            //         name: user.name,
-            //         email: user.email,
-            //         image: user.image,
-            //         emailVerified: true,
-            //     })
-            //
-            //     if (user) {
-            //         token.id = user?.id
-            //     }
-            //     return token
-            // }
-            return token
-        },
-        session: async function ({ token, session }) {
-            if (token && session) {
-                // @ts-ignore
-                session.user.id = token.id
-                // @ts-ignore
-                session.user.name = token.name
-                // @ts-ignore
-                session.user.email = token.email
-                // @ts-ignore
-                session.user.image = token.picture
-            }
-            return session
-        },
-        redirect: async ({ baseUrl }) => {
-            return baseUrl
-        },
+  callbacks: {
+    signIn: async ({ user, account, profile }) => {
+      console.log(user, account, profile);
+      return true;
     },
-}
-export default NextAuth(authOptions);
+    redirect: async ({ url, baseUrl }) => {
+      console.log("url", url);
+      console.log("baseUrl", baseUrl);
+      return baseUrl;
+    },
+    session: async ({ session, token, user }) => {
+      console.log("session", session);
+      console.log("token", token);
+      console.log("user", user);
+      return session;
+    },
+  },
+};
+
+const handler = NextAuth(options);
+
+export { handler as GET, handler as POST };

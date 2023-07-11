@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { FunctionComponent } from "react";
 import { Icons } from "../icons";
@@ -10,15 +10,13 @@ import Image from "next/image";
 import Link from "next/link";
 //@ts-ignore
 
-import { signIn, signOut, useSession } from "next-auth/react"
-
+import { signIn, signOut, useSession } from "next-auth/react";
 
 interface OwnProps {}
 
 type Props = OwnProps;
 
 const Hero: FunctionComponent<Props> = () => {
-
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
@@ -46,7 +44,7 @@ const Hero: FunctionComponent<Props> = () => {
             ></path>
           </svg>
         </a>
-        <h1  className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           Innovator to entrepreneur
         </h1>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
@@ -54,21 +52,11 @@ const Hero: FunctionComponent<Props> = () => {
         </p>
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <Link href={"/pricing"}>
-          <Button size={"lg"}>
-            <Icons.ticket className={"h-4 w-4 mr-2"} />
-            Get Ticket
-          </Button>
+            <Button size={"lg"}>
+              <Icons.ticket className={"h-4 w-4 mr-2"} />
+              Get Ticket
+            </Button>
           </Link>
-          <div
-
-              onClick={() => {
-
-                signIn("google")
-              }}
-          >
-            Sign in
-          </div>
-
         </div>
         <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
           <span className="font-semibold text-gray-400 uppercase">
