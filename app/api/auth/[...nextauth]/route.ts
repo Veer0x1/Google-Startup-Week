@@ -1,15 +1,17 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { FirestoreAdapter } from "@next-auth/firebase-adapter"
-import { cert } from "firebase-admin/app"
+import admin from "firebase-admin"
+import * as process from "process"
 
 const options: NextAuthOptions = {
+  // @ts.ignore
   adapter: FirestoreAdapter({
-    credential: cert({
+    credential: admin.credential.cert({
       projectId: process.env.PROJECT_ID,
       clientEmail: process.env.CLIENT_EMAIL,
       privateKey: process.env.PRIVATE_KEY,
-    })
+    }),
   }),
   providers: [
     GoogleProvider({
