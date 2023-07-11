@@ -1,16 +1,24 @@
+'use client'
+
 import React, { FunctionComponent } from "react";
 import { Icons } from "../icons";
 import { Button } from "@/components/ui/button";
-import Google from "@/public/assets/GoogleForStartups_Horizontal (1) (1).png";
-import gd from "@/public/assets/GD_REGISTRY_POWERED_BY_LOCKUP_3_CMYK_COLOR (2) (1).png";
-import brex from "@/public/assets/Brex Black _ White Logo.png";
+// import Google from "@/public/assets/GoogleForStartups_Horizontal (1) (1).png";
+// import gd from "@/public/assets/GD_REGISTRY_POWERED_BY_LOCKUP_3_CMYK_COLOR (2) (1).png";
+// import brex from "@/public/assets/Brex Black _ White Logo.png";
 import Image from "next/image";
+import Link from "next/link";
+//@ts-ignore
+
+import { signIn, signOut, useSession } from "next-auth/react"
+
 
 interface OwnProps {}
 
 type Props = OwnProps;
 
 const Hero: FunctionComponent<Props> = () => {
+
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
@@ -38,17 +46,29 @@ const Hero: FunctionComponent<Props> = () => {
             ></path>
           </svg>
         </a>
-        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        <h1  className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           Innovator to entrepreneur
         </h1>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
           AUGUST 7-9, 2023, IIT BHU Varanasi
         </p>
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+          <Link href={"/pricing"}>
           <Button size={"lg"}>
             <Icons.ticket className={"h-4 w-4 mr-2"} />
             Get Ticket
           </Button>
+          </Link>
+          <div
+
+              onClick={() => {
+
+                signIn("google")
+              }}
+          >
+            Sign in
+          </div>
+
         </div>
         <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
           <span className="font-semibold text-gray-400 uppercase">
@@ -59,31 +79,31 @@ const Hero: FunctionComponent<Props> = () => {
               href="#"
               className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
             >
-              <Image src={Google} alt={"Google"} height={200} width={200} />
+              {/*<Image src={Google} alt={"Google"} height={200} width={200} />*/}
             </a>
             <a
               href="#"
               className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
             >
-              <Image
-                src={gd}
-                alt={"GD"}
-                height={200}
-                width={200}
-                className={"p-4"}
-              />
+              {/*<Image*/}
+              {/*  src={gd}*/}
+              {/*  alt={"GD"}*/}
+              {/*  height={200}*/}
+              {/*  width={200}*/}
+              {/*  className={"p-4"}*/}
+              {/*/>*/}
             </a>
             <a
               href="#"
               className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
             >
-              <Image
-                src={brex}
-                alt={"Brex"}
-                height={200}
-                width={200}
-                className={"p-4"}
-              />
+              {/*<Image*/}
+              {/*  src={brex}*/}
+              {/*  alt={"Brex"}*/}
+              {/*  height={200}*/}
+              {/*  width={200}*/}
+              {/*  className={"p-4"}*/}
+              {/*/>*/}
             </a>
           </div>
         </div>
