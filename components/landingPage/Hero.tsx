@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 //@ts-ignore
 
-import { signIn, signOut } from "next-auth/react"
+import { signIn, signOut, useSession } from "next-auth/react"
 
 
 interface OwnProps {}
@@ -18,15 +18,7 @@ interface OwnProps {}
 type Props = OwnProps;
 
 const Hero: FunctionComponent<Props> = () => {
-  //@ts-ignore
-  const signIn: MouseEventHandler<HTMLDivElement> = (event) => {
-    // Your sign-in logic here
-    console.log("Sign-in clicked!");
 
-    // For example, you can use NextAuth.js to initiate the sign-in process
-    // by calling the signIn() function from the 'next-auth/client' package
-    signIn(); // Replace this with your actual sign-in function call
-  };
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
@@ -67,7 +59,15 @@ const Hero: FunctionComponent<Props> = () => {
             Get Ticket
           </Button>
           </Link>
-          <button onClick={()=>signIn("Google")}>Sign in</button>
+          <div
+
+              onClick={() => {
+
+                signIn("google")
+              }}
+          >
+            Sign in
+          </div>
 
         </div>
         <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
