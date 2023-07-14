@@ -13,6 +13,8 @@ const Pricing = () => {
 
     const fetchPrices = async () => {
         const {data} = await axios.get('http://localhost:3000/api/getProducts')
+        console.log(data);
+        
         setPrices(data)
     }
 
