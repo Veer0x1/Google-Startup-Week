@@ -1,8 +1,8 @@
 'use client'
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
 import useSWR from "swr";
-import { Stripe } from "stripe";
+import { db }from "@/lib/firebaseStore";
+import { doc,setDoc, collection } from "firebase/firestore";
 //@ts-ignore
 const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
 
@@ -35,6 +35,11 @@ export default function SuccessPage() {
   console.log(checkoutSession);
   if (checkoutSession) {
     // setPaymentDetails(checkoutSession);
+
+    const docId = checkoutSession.customer_details?.name + checkoutSession.customer_details?.email;
+
+    setDoc(doc(db,"payments",docId),checkoutSession)
+
 
     return (
         <div className="flex flex-col items-center justify-center h-screen">
