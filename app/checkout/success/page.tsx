@@ -2,41 +2,51 @@
 import { useSearchParams } from "next/navigation";
 import useSWR from "swr";
 import { db } from "@/lib/firebaseStore";
-import { doc, setDoc } from "firebase/firestore";
+import {
+  doc,
+  setDoc,
+  query,
+  collection,
+  where,
+  updateDoc,
+  getDocs,
+} from "firebase/firestore";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
 //@ts-ignore
 const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
 
-// interface CheckoutSessionData {
-//   amount_received: number;
-//   customer_details: {
-//     name: string;
-//   };
-//   // Add any other properties you expect in the checkout session response
-// }
-
 export default function SuccessPage() {
-  //   const [paymentDetails, setPaymentDetails] = useState<
-  //     CheckoutSessionData | {}
-  //   >({});
-
+  const [docID, setDocID] = useState<null | string>(null);
+  const { data: session } = useSession();
   const searchParams = useSearchParams();
   const sessionId = searchParams.get("session_id");
-  console.log("session id", sessionId);
+  useEffect(() => {
+    const fetcher = async () => {
+      const q = query(
+        collection(db, "users"),
+        where("email", "==", session?.user?.email)
+      );
+      const querySnapshot = await getDocs(q);
+      setDocID(querySnapshot.docs[0].id);
+    };
+    fetcher();
+  }, [session]);
 
   const URL = sessionId ? `/api/stripe/sessions/${sessionId}` : null;
-
   const { data: checkoutSession, error } = useSWR(URL, fetcher);
 
   if (error) return <div>failed to load the session</div>;
 
-  console.log(checkoutSession);
   if (checkoutSession) {
-    // setPaymentDetails(checkoutSession);
-
     const docId =
       checkoutSession.customer_details?.name +
       checkoutSession.customer_details?.email;
+
+    updateDoc(doc(db, "users", docID!.toString()), {
+      paymentId: checkoutSession.payment_intent.id,
+    });
 
     setDoc(doc(db, "payments", docId), checkoutSession);
 
