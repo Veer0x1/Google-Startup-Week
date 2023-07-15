@@ -24,9 +24,9 @@ export default function SuccessPage() {
   const sessionId = searchParams.get("session_id");
   useEffect(() => {
     const fetcher = async () => {
-      const q = query(
-        collection(db, "users"),
-        where("email", "==", session?.user?.email)
+      const q =await query(
+          collection(db, "users"),
+          where("email", "==", session?.user?.email)
       );
       const querySnapshot = await getDocs(q);
       setDocID(querySnapshot.docs[0].id);
@@ -41,38 +41,38 @@ export default function SuccessPage() {
 
   if (checkoutSession) {
     const docId =
-      checkoutSession.customer_details?.name +
-      checkoutSession.customer_details?.email;
+        checkoutSession.customer_details?.name +
+        checkoutSession.customer_details?.email;
 
-    updateDoc(doc(db, "users", docID!.toString()), {
+    docID && updateDoc(doc(db, "users", docID!.toString()), {
       paymentId: checkoutSession.payment_intent.id,
     });
 
     setDoc(doc(db, "payments", docId), checkoutSession);
 
     return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="">
-          Your payment of {checkoutSession.payment_intent.amount_received / 100}{" "}
-          is successful
-        </h1>
-        <h2>Customer details</h2>
-        <p>Payment Id: {checkoutSession.payment_intent.id}</p>
-        <p>Customer Name: {checkoutSession.customer_details?.name}</p>
-        <p>Customer Email: {checkoutSession.customer_details?.email}</p>
-      </div>
+        <div className="flex flex-col items-center justify-center h-screen">
+          <h1 className="">
+            Your payment of {checkoutSession.payment_intent.amount_received / 100}{" "}
+            is successful
+          </h1>
+          <h2>Customer details</h2>
+          <p>Payment Id: {checkoutSession.payment_intent.id}</p>
+          <p>Customer Name: {checkoutSession.customer_details?.name}</p>
+          <p>Customer Email: {checkoutSession.customer_details?.email}</p>
+        </div>
     );
   } else {
     return (
-      <div className="flex flex-col justify-center h-screen items-center space-x-4">
-        <Skeleton className="h-4 w-[300px]" />
-        <div className="space-y-2 mt-8">
-          <Skeleton className="h-4 w-[250px]" />
-          <Skeleton className="h-4 w-[200px]" />
-          <Skeleton className="h-4 w-[200px]" />
-          <Skeleton className="h-4 w-[200px]" />
+        <div className="flex flex-col justify-center h-screen items-center space-x-4">
+          <Skeleton className="h-4 w-[300px]" />
+          <div className="space-y-2 mt-8">
+            <Skeleton className="h-4 w-[250px]" />
+            <Skeleton className="h-4 w-[200px]" />
+            <Skeleton className="h-4 w-[200px]" />
+            <Skeleton className="h-4 w-[200px]" />
+          </div>
         </div>
-      </div>
     );
   }
 }
