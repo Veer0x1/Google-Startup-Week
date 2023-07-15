@@ -3,7 +3,7 @@ import Hero from "@/components/landingPage/Hero";
 import WhyStartupWeekend from "@/components/landingPage/WhyStartupWeekend";
 import {Mentor} from "@/components/landingPage/Mentor";
 import React from "react";
-
+import Link from "next/link"
 export interface Album {
     name: string
     artist: string
@@ -39,13 +39,14 @@ export interface Album {
 export default function Home() {
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 scroll-smooth transition duration-1000">
          <Hero />
         <WhyStartupWeekend/>
+
         <h1 className="m-4 text-4xl font-medium tracking-tight leading-none text-gray-900 md:text-3xl lg:text-6xl dark:text-white">
             Meet Our Mentor
         </h1>
-        <div className="flex flex-wrap justify-center space-x-4 pb-4">
+        <div className="flex flex-wrap justify-center space-x-4 pb-4" >
             {listenNowAlbums.map((album) => (
                 <Mentor
                     key={album.name}

@@ -3,9 +3,12 @@
 import React, { FunctionComponent } from "react";
 import { Icons } from "../icons";
 import { Button } from "@/components/ui/button";
-// import Google from "@/public/assets/GoogleForStartups_Horizontal (1) (1).png";
-// import gd from "@/public/assets/GD_REGISTRY_POWERED_BY_LOCKUP_3_CMYK_COLOR (2) (1).png";
-// import brex from "@/public/assets/Brex Black _ White Logo.png";
+//@ts-ignore
+import Google from "@/public/assets/GoogleForStartups_Horizontal1.png";
+//@ts-ignore
+import gd from "@/public/assets/GD_REGISTRY_POWERED_BY_LOCKUP_3_CMYK_COLOR1.png";
+//@ts-ignore
+import brex from "@/public/assets/BrexBlack.png";
 import Image from "next/image";
 import Link from "next/link";
 //@ts-ignore
@@ -67,31 +70,31 @@ const Hero: FunctionComponent<Props> = () => {
               href="#"
               className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
             >
-              {/*<Image src={Google} alt={"Google"} height={200} width={200} />*/}
+              <Image src={Google} alt={"Google"} height={200} width={200} />
             </a>
             <a
               href="#"
               className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
             >
-              {/*<Image*/}
-              {/*  src={gd}*/}
-              {/*  alt={"GD"}*/}
-              {/*  height={200}*/}
-              {/*  width={200}*/}
-              {/*  className={"p-4"}*/}
-              {/*/>*/}
+              <Image
+                src={gd}
+                alt={"GD"}
+                height={200}
+                width={200}
+                className={"p-4"}
+              />
             </a>
             <a
               href="#"
               className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
             >
-              {/*<Image*/}
-              {/*  src={brex}*/}
-              {/*  alt={"Brex"}*/}
-              {/*  height={200}*/}
-              {/*  width={200}*/}
-              {/*  className={"p-4"}*/}
-              {/*/>*/}
+              <Image
+                src={brex}
+                alt={"Brex"}
+                height={200}
+                width={200}
+                className={"p-4"}
+              />
             </a>
           </div>
         </div>

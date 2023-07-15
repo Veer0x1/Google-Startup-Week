@@ -30,7 +30,6 @@ export default function SuccessPage() {
 
   if (error) return <div>failed to load the session</div>;
 
-  console.log(checkoutSession);
   if (checkoutSession) {
     // setPaymentDetails(checkoutSession);
 

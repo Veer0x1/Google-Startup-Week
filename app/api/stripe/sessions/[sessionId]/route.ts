@@ -17,8 +17,6 @@ export async function GET(request: NextRequest, { params }: { params: { sessionI
             expand: ['payment_intent', 'line_items.data.price.product']
         })
 
-        console.log("from session route checkoutSession", checkoutSession);
-
 
         return NextResponse.json(checkoutSession, { status: 200 })
     } catch (error) {

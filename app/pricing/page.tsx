@@ -12,9 +12,8 @@ const Pricing = () => {
 
 
     const fetchPrices = async () => {
-        const {data} = await axios.get('http://localhost:3000/api/getProducts')
-        console.log(data);
-        
+        const {data} = await axios.get('https://google-startup-week.vercel.app/api/getProducts')
+
         setPrices(data)
     }
 

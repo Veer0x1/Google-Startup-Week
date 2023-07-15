@@ -4,6 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
+//@ts-ignore
 import logo from "@/public/assets/TechstarsStartupWeekend.png";
 
 import { MainNavItem } from "@/types";

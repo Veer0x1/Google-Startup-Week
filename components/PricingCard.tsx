@@ -1,5 +1,6 @@
 import axios from "axios"
 import Link from "next/link"
+import Image from "next/image"
 //@ts-ignore
 const PricingCard = ({price}) => {
 //@ts-ignore
@@ -133,7 +134,7 @@ const PricingCard = ({price}) => {
 // @ts-ignore
     const handleSubscription = async (e) => {
         e.preventDefault();
-        const { data } = await axios.post('http://localhost:3000/api/payment',
+        const { data } = await axios.post('https://google-startup-week.vercel.app/api/payment',
             {
                 priceId: price.id
             },
