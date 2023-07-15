@@ -144,12 +144,9 @@ const PricingCard = ({price}) => {
                 },
             }
         );
-        console.log('data from pricing carf', data);
         
         window.location.assign(data)
     }
-
-    console.log(price);
     
     return (
         <div className="border-gray-100 shadow-2xl border-4 text-center mt-10 max-w-[1040px] p-4 rounded-2xl">
