@@ -32,7 +32,7 @@ const Pricing = () => {
 
   return (
     <section className="w-full">
-        {session?<>
+        {session? prices.length>0?<>
         <div className="mx-auto max-w-4xl text-center mt-10 items-center">
             <h2 className="text-3xl font-semibold leading-7 text-[#f1592a]">
                 Pricing
@@ -51,7 +51,15 @@ const Pricing = () => {
         <PricingCard price={price} key={price.id}/>
   )
 )}
-</div></>:<div><div className="flex flex-col justify-center h-screen items-center space-x-4">
+</div></>:<div className="flex flex-col justify-center h-screen items-center space-x-4">
+            <Skeleton className="h-8 w-[300px]" />
+            <div className="space-y-2 mt-2">
+                <Skeleton className="h-6 w-[250px]" />
+                <Skeleton className="h-6 w-[200px]" />
+                <Skeleton className="h-6 w-[200px]" />
+                <Skeleton className="h-6 w-[200px]" />
+            </div>
+        </div>:<div><div className="flex flex-col justify-center h-screen items-center space-x-4">
             <Skeleton className="h-4 w-[300px]" />
             <div className="space-y-2 mt-8">
                 <Skeleton className="h-4 w-[250px]" />

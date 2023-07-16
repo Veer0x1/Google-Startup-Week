@@ -24,7 +24,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Provider session={session}>
-          <header className="container z-40 bg-background -mb-10">
+          <header className="container z-40 bg-background -mb-2.5">
             <div className="flex h-20 items-center justify-between py-6">
               <MainNav items={siteConfig.mainNav} />
               <nav className="flex align-middle"></nav>
