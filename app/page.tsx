@@ -39,11 +39,11 @@ export interface Album {
 export default function Home() {
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 scroll-smooth transition duration-1000">
-         <Hero />
+    <main className="flex min-h-screen flex-col items-center justify-between md:p-24 scroll-smooth transition duration-1000">
+        <Hero />
         <WhyStartupWeekend/>
 
-        <h1 className="m-4 text-4xl font-medium tracking-tight leading-none text-gray-900 md:text-3xl lg:text-6xl dark:text-white">
+        <h1 className="m-4 text-4xl  font-medium tracking-tight leading-none text-gray-900 md:text-3xl lg:text-6xl dark:text-white">
             Meet Our Mentor
         </h1>
         <div className="flex flex-wrap justify-center space-x-4 pb-4" >

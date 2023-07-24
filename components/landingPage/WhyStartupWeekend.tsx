@@ -31,8 +31,8 @@ interface OwnProps {}
 type Props = OwnProps;
 
 const WhyStartupWeekend: FunctionComponent<Props> = () => {
-  return ( <>
-      <h1 className="mb-4 text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
+  return ( <div className="w-full">
+      <h1 className="mb-4 text-2xl text-center font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
           Why Startup Weekend
       </h1>
       <div className="flex flex-wrap justify-center">
@@ -49,7 +49,7 @@ const WhyStartupWeekend: FunctionComponent<Props> = () => {
           })
       }
       </div>
-  </>);
+  </div>);
 
 };
 
