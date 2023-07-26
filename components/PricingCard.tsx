@@ -1,7 +1,7 @@
 import axios from "axios"
 import Link from "next/link"
 import Image from "next/image"
-import TechstarStartupWeekend from "@/public/assets/gswvaranasi.png"
+import TechstarStartupWeekend from "@/public/assets/gswvaranasi.jpg"
 import { Button } from "@/components/ui/button";
 
 //@ts-ignore
