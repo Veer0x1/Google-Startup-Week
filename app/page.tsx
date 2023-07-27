@@ -11,8 +11,8 @@ export interface Album {
     cover: string
 }
 export const metadata:Metadata = {
-    title: "Google Startup Week IIT BHU",
-    description: "Google Startup Week in IIT BHU",
+    title: "Google Startup Week IIT BHU-2023",
+    description: "Google Startup Week in IIT BHU -8 Aug 2023",
     keywords:["Google Startup Week in IIT BHU","gsw varanasi","gsw iit bhu","Google Startup Week","IIT BHU Varanasi","Startup events in India","Entrepreneurship programs","Google events and workshops","Technology startup conferences","Startup community in Varanasi","IIT BHU tech events","Networking for startups",""]
 }
 

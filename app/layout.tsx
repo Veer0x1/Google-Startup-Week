@@ -11,7 +11,7 @@ import {Metadata} from "next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata:Metadata = {
-  title: "Google Startup Week IIT BHU",
+  title: "Google Startup Week IIT BHU-2023",
   description: "Google Startup Week in IIT BHU",
   keywords:["Google Startup Week in IIT BHU","gsw varanasi","gsw iit bhu","startup","learn","deep","weekend","something","meet","start","connect"]
 }
