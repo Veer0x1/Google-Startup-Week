@@ -6,11 +6,14 @@ import { NavbarAction } from "@/components/NavbarActions";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
 import Provider from "@/app/Provider";
+import {Metadata} from "next";
+
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Google Startup Week",
+export const metadata:Metadata = {
+  title: "Google Startup Week IIT BHU",
   description: "Google Startup Week in IIT BHU",
+  keywords:["Google Startup Week in IIT BHU","gsw varanasi","gsw iit bhu"]
 }
 
 export default async function RootLayout({
