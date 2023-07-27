@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata:Metadata = {
   title: "Google Startup Week IIT BHU",
   description: "Google Startup Week in IIT BHU",
-  keywords:["Google Startup Week in IIT BHU","gsw varanasi","gsw iit bhu"]
+  keywords:["Google Startup Week in IIT BHU","gsw varanasi","gsw iit bhu","startup","learn","deep","weekend","something","meet","start","connect"]
 }
 
 export default async function RootLayout({

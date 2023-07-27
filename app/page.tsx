@@ -4,10 +4,16 @@ import WhyStartupWeekend from "@/components/landingPage/WhyStartupWeekend";
 import {Mentor} from "@/components/landingPage/Mentor";
 import React from "react";
 import Link from "next/link"
+import {Metadata} from "next";
 export interface Album {
     name: string
     artist: string
     cover: string
+}
+export const metadata:Metadata = {
+    title: "Google Startup Week IIT BHU",
+    description: "Google Startup Week in IIT BHU",
+    keywords:["Google Startup Week in IIT BHU","gsw varanasi","gsw iit bhu","Google Startup Week","IIT BHU Varanasi","Startup events in India","Entrepreneurship programs","Google events and workshops","Technology startup conferences","Startup community in Varanasi","IIT BHU tech events","Networking for startups",""]
 }
 
  const listenNowAlbums: Album[] = [
