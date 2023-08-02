@@ -10,7 +10,7 @@ const PricingCard = ({price}) => {
 // @ts-ignore
     const handleSubscription = async (e) => {
         e.preventDefault();
-        const { data } = await axios.post('https://google-startup-week.vercel.app/api/payment',
+        const { data } = await axios.post('https://www.startupweekendvaranasi.com/api/payment',
             {
                 priceId: price.id
             },
