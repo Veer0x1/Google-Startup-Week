@@ -61,7 +61,7 @@ export const FormComponent: FunctionComponent<Props> = (props) => {
     })
     const handleSubscription = async () => {
         let price =process.env.PRICEID;
-        const { data } = await axios.post('http://localhost:3000/api/payment',
+        const { data } = await axios.post('https://www.startupweekendvaranasi.com/api/payment',
             {
                 priceId:price,
             },
