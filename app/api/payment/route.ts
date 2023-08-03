@@ -8,7 +8,7 @@ export async function POST(request:NextRequest) {
         apiVersion: '2022-11-15',
     });
     let data = await request.json();
-    let priceId = data.priceId
+    let priceId = process.env.PRICEID
     const session = await stripe.checkout.sessions.create({
         line_items: [
             {

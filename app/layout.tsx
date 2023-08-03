@@ -7,7 +7,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
 import Provider from "@/app/Provider";
 import {Metadata} from "next";
-
+import { Card } from "@/components/ui/card"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -91,8 +91,8 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Provider session={session}>
-          <header className="container z-40 bg-background -mb-2.5">
-            <div className="flex h-20 items-center justify-between py-6">
+          <header className="container z-40 bg-background -mb-2.5 overflow-hidden mt-1 border rounded-lg shadow">
+            <div className="flex h-20 items-center justify-between ">
               <MainNav items={siteConfig.mainNav} />
               <nav className="flex align-middle"></nav>
               <NavbarAction />

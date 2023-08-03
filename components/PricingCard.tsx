@@ -10,7 +10,7 @@ const PricingCard = ({price}) => {
 // @ts-ignore
     const handleSubscription = async (e) => {
         e.preventDefault();
-        const { data } = await axios.post('https://www.startupweekendvaranasi.com/api/payment',
+        const { data } = await axios.post('http://localhost:3000/api/payment',
             {
                 priceId: price.id
             },

@@ -24,8 +24,8 @@ export const NavbarAction: FunctionComponent<Props> = (props) => {
   const { data: session, status } = useSession();
   return (
     <>
-      <div>
-        <Link href={"/pricing"}>
+      <div className="flex justify-center items-center">
+        <Link href={"/form"}>
           <Button variant={"default"} size={"sm"} className={"mr-4 px-4"}>
             Get Ticket
           </Button>

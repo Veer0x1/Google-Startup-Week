@@ -25,7 +25,7 @@ const Pricing = () => {
   
 
     const fetchPrices = async () => {
-        const {data} = await axios.get('https://www.startupweekendvaranasi.com/api/getProducts')
+        const {data} = await axios.get('http://localhost:3000/api/getProducts')
 
         setPrices(data)
     }

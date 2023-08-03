@@ -28,7 +28,7 @@ export function UserNav() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         {/*<div className="flex justify-center items-center">*/}
-        <Button variant="ghost" className="relative h-8 w-8 top-2.5 rounded-full ">
+        <Button variant="ghost" className="relative h-8 w-8  rounded-full ">
           <Avatar className="h-8 w-8">
             <AvatarImage src={session?.user?.image!} alt="@shadcn" />
             <AvatarFallback>{namechar}</AvatarFallback>
