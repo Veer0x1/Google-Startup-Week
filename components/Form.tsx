@@ -31,6 +31,7 @@ type Props = OwnProps;
 const FormSchema = z.object({
     firstname: z.string({required_error:"First Name is required"}).nonempty({ message: "First name is required" }),
     lastname: z.string({required_error:"Last Name is required"}).nonempty({ message: "Last name is required" }),
+    phone:z.string({required_error:"Phone number required"}).min(10,{message:"10 digits"}).max(10,{message:"10 digits"}),
     location: z.string({required_error:"Location is required"}).min(3).max(50),
     linkedin: z.string({required_error:"LinkedIn Id is required"}).url({message:"Invalid LinkedIn URL"}),
     size:z.enum(["S","M","L","XL","2XL"],{
@@ -121,6 +122,19 @@ export const FormComponent: FunctionComponent<Props> = (props) => {
                                 <FormLabel>Last name</FormLabel>
                                 <FormControl>
                                     <Input placeholder="Last name" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Phone Number</FormLabel>
+                                <FormControl>
+                                    <Input type="number" placeholder="Phone number" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>

@@ -71,7 +71,7 @@ const Page: FunctionComponent<Props> = (props) => {
         </CardContent>
         {!user?.paymentId && (
           <CardFooter>
-            <Link href={"/pricing"} className={"w-full"}>
+            <Link href={"/form"} className={"w-full"}>
               <Button variant={"default"} className={"w-full"}>
                 Get Ticket
               </Button>

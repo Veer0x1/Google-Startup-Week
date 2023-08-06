@@ -42,7 +42,7 @@ const Hero: FunctionComponent<Props> = () => {
             />
           </span>{" "}
           <span className="text-sm font-medium">
-            ECELL IIT BHU 2023-24
+            ECELL IIT BHU
           </span>
           <svg
             className="ml-2 w-5 h-5"
@@ -61,7 +61,7 @@ const Hero: FunctionComponent<Props> = () => {
           Innovator to Entrepreneur
         </h1>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-          AUGUST 7-9, 2023, IIT BHU Varanasi
+          AUGUST 25-27, 2023, IIT BHU Varanasi
         </p>
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <Link href={"/form"}>
@@ -72,7 +72,7 @@ const Hero: FunctionComponent<Props> = () => {
           </Link>
         </div>
         <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
-          <span className="font-semibold text-2xl text-gray-500 uppercase">
+          <span className="font-semibold text-2xl text-black uppercase">
             What is Startup weekend
           </span>
           <div className="mt-8 align-baseline">

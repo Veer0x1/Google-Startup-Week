@@ -44,76 +44,19 @@ export const Sponsor: FunctionComponent<Props> = (props) => {
         <div  className="my-7 max-w-screen">
             <div className="font-semibold text-2xl text-black uppercase text-center mb-7">global sponsors</div>
             <div className="flex flex-wrap justify-center items-center" >
-           {/*     <div className="border m-2 flex justify-center items-center h-40 rounded-lg p-2 shadow">*/}
-           {/*         <a*/}
-           {/*         href="#"*/}
-           {/*         className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 transition-all duration-200 ease-in-out hover:scale-105"*/}
-           {/*         >*/}
-           {/*         <Image src={Google} alt={"Google"} height={400} width={300} />*/}
-           {/*     </a>*/}
-           {/*</div>*/}
                 {
                     ListOfSponsor.map((data,index)=>
                         <div className="border m-2 flex justify-center items-center h-40 rounded-lg p-2 shadow" key={index}>
                             <a
                                 target={"_blank"}
                                 href={data.href}
-                                className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 transition-all duration-200 ease-in-out hover:scale-105"
+                                className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
                             >
                                 <Image src={data.src} alt={data.alt} height={400} width={300}  />
                             </a>
                         </div>
                     )
                 }
-
-                    {/*<div className="border m-2 flex justify-center items-center h-40 rounded-lg p-2 shadow">*/}
-                    {/*    <a*/}
-                    {/*        href="#"*/}
-                    {/*        className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 transition-all duration-200 ease-in-out hover:scale-105"*/}
-                    {/*    >*/}
-                    {/*        <Image src={gd} alt={"Google"} height={400} width={300} />*/}
-                    {/*    </a>*/}
-                    {/*</div>*/}
-                {/*<div className="border m-2 flex justify-center items-center h-40 rounded-lg p-2 shadow">*/}
-                {/*    <a*/}
-                {/*        href="#"*/}
-                {/*        className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 transition-all duration-200 ease-in-out hover:scale-105"*/}
-                {/*    >*/}
-                {/*        <Image src={brex} alt={"Google"} height={400} width={300} />*/}
-                {/*    </a>*/}
-                {/*</div>*/}
-                {/*<div className="border m-2 flex justify-center items-center h-40 rounded-lg p-2 shadow">*/}
-                {/*    <a*/}
-                {/*        href="#"*/}
-                {/*        className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 transition-all duration-200 ease-in-out hover:scale-105"*/}
-                {/*    >*/}
-                {/*        <Image src={ecell} alt={"Google"} height={400} width={300} />*/}
-                {/*    </a>*/}
-                {/*</div>*/}
-                {/*<a*/}
-                {/*    href="#"*/}
-                {/*    className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 border-1"*/}
-                {/*>*/}
-                {/*    <Image*/}
-                {/*        src={gd}*/}
-                {/*        alt={"GD"}*/}
-                {/*        height={200}*/}
-                {/*        width={200}*/}
-                {/*        className={"p-4"}*/}
-                {/*    />*/}
-                {/*</a>*/}
-                {/*<a*/}
-                {/*    href="#"*/}
-                {/*    className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"*/}
-                {/*>*/}
-                {/*    <Image*/}
-                {/*        src={brex}*/}
-                {/*        alt={"Brex"}*/}
-                {/*        height={200}*/}
-                {/*        width={200}*/}
-                {/*        className={"p-4"}*/}
-                {/*    />*/}
-                {/*</a>*/}
             </div>
         </div>
     )
