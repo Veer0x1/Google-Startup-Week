@@ -13,6 +13,8 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Card } from "@/components/ui/card"
 import { useToast } from "@/components/ui/use-toast"
 import { ToastAction } from "@/components/ui/toast"
+import {useRouter} from "next/navigation";
+
 import {
     Form,
     FormControl,
@@ -44,6 +46,7 @@ export const FormComponent: FunctionComponent<Props> = (props) => {
     const { toast } = useToast()
     const { data: session, status } = useSession();
     const [userId,setUserId] =useState<string|null>(null);
+    const route = useRouter()
 
     useEffect(()=>{
         const fetcher = async ()=>{
@@ -84,7 +87,7 @@ export const FormComponent: FunctionComponent<Props> = (props) => {
                toast({
                    description: "Submitted successfully !!",
                })
-               handleSubscription()
+               route.push("/payment");
            }
         }
         catch (error){
