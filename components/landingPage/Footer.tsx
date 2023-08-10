@@ -6,7 +6,7 @@ interface OwnProps {}
 type Props = OwnProps;
 export const Footer: FunctionComponent<Props> = (props) => {
     return (
-        <div  className=" max-w-screen">
+        <div  className=" max-w-screen mt-4 md:mt-0">
             <hr className="shadow -mt-4"/>
            <div className="m-4 md:flex justify-evenly flex-wrap">
             <div><div className="flex justify-center items-center"><a
