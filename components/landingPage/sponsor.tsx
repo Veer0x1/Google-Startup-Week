@@ -30,18 +30,18 @@ const ListOfSponsor =[
         href:"https://www.brex.com/",
         alt:"brex"
     },
-    {
-        src:ecell,
-        href:"https://www.ecelliitbhu.com/",
-        alt:"ecell"
-    }
+    // {
+    //     src:ecell,
+    //     href:"https://www.ecelliitbhu.com/",
+    //     alt:"ecell"
+    // }
 ]
 interface OwnProps {}
 
 type Props = OwnProps;
 export const Sponsor: FunctionComponent<Props> = (props) => {
     return (
-        <div  className="my-7 max-w-screen">
+        <div  className="mt-7 max-w-screen">
             <div className="font-semibold text-2xl text-black uppercase text-center mb-7">global sponsors</div>
             <div className="flex flex-wrap justify-center items-center" >
                 {

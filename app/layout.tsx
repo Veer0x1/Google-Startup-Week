@@ -7,6 +7,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
 import Provider from "@/app/Provider";
 import {Metadata} from "next";
+import {Footer} from "@/components/landingPage/Footer"
 import { Card } from "@/components/ui/card"
 const inter = Inter({ subsets: ["latin"] });
 
@@ -101,6 +102,9 @@ export default async function RootLayout({
           <div className="relative flex min-h-screen flex-col">
             <div className="flex-1">{children}</div>
           </div>
+          <footer>
+            <Footer/>
+          </footer>
         </Provider>
       </body>
     </html>
