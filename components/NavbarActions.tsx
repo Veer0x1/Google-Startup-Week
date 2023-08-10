@@ -25,7 +25,7 @@ export const NavbarAction: FunctionComponent<Props> = (props) => {
   return (
     <>
       <div className="flex justify-center items-center">
-        <Link href={"/form"}>
+        <Link href={"/payment"}>
           <Button variant={"default"} size={"sm"} className={"mr-4 px-4"}>
             Get Ticket
           </Button>

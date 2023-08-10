@@ -64,7 +64,7 @@ const Hero: FunctionComponent<Props> = () => {
           AUGUST 25-27, 2023, IIT BHU Varanasi
         </p>
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-          <Link href={"/form"}>
+          <Link href={"/payment"}>
             <Button size={"lg"} className="text-2xl py-2">
               <Icons.ticket className={"h-5 w-5 mr-2"} />
               Get Ticket
