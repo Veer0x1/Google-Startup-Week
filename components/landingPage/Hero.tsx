@@ -42,7 +42,7 @@ const Hero: FunctionComponent<Props> = () => {
             />
           </span>{" "}
           <span className="text-sm font-medium">
-            ECELL IIT BHU
+            E-CELL IIT BHU
           </span>
           <svg
             className="ml-2 w-5 h-5"
