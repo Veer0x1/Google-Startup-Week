@@ -12,7 +12,7 @@ export interface Album {
   cover: string;
 }
 export const metadata: Metadata = {
-  title: "Google Startup Week IIT BHU-2023",
+  title: "Startup Weekend Varanasi",
   description: "Google Startup Week in IIT BHU -8 Aug 2023",
   keywords: [
     "Google Startup Week in IIT BHU",
