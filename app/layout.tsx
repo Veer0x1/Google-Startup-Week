@@ -6,14 +6,15 @@ import { NavbarAction } from "@/components/NavbarActions";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
 import Provider from "@/app/Provider";
-import {Metadata} from "next";
-import {Footer} from "@/components/landingPage/Footer"
-import { Card } from "@/components/ui/card"
+import { Metadata } from "next";
+import { Footer } from "@/components/landingPage/Footer";
+import { Card } from "@/components/ui/card";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Google Startup Week in IIT BHU - 8 Aug 2023",
-  description: "Join us for the Google Startup Week in IIT BHU on 8th August 2023. Explore innovation, entrepreneurship, and technology in Varanasi.",
+  title: "Startup Weekend Varanasi",
+  description:
+    "Join us for the Google Startup Week in IIT BHU on 8th August 2023. Explore innovation, entrepreneurship, and technology in Varanasi.",
   keywords: [
     "Google Startup Week in IIT BHU",
     "gsw varanasi",
@@ -77,10 +78,9 @@ export const metadata: Metadata = {
     "Technology in India",
     "IIT BHU entrepreneurship",
     "Startup funding opportunities",
-    "Tech trends in 2023"
-  ]
-}
-
+    "Tech trends in 2023",
+  ],
+};
 
 export default async function RootLayout({
   children,
@@ -103,7 +103,7 @@ export default async function RootLayout({
             <div className="flex-1">{children}</div>
           </div>
           <footer>
-            <Footer/>
+            <Footer />
           </footer>
         </Provider>
       </body>
