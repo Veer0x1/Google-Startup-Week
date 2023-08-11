@@ -63,7 +63,7 @@ export default function Home() {
       <Hero />
       <WhyStartupWeekend />
       <Sponsor />
-      <Techstar />
+      {/*<Techstar />*/}
       {/*<h1 className="m-4 text-4xl  font-medium tracking-tight leading-none text-gray-900 md:text-3xl lg:text-6xl dark:text-white">*/}
       {/*    Meet Our Mentor*/}
       {/*</h1>*/}
